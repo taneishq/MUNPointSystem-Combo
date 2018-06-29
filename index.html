@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang=“en-US” ng-app="pointsystem">
+<head>
+  <style type="text/css">
+    body {
+      background-color:#333333;
+      font-family: "Nexa Bold";
+      font-size: x-large;
+      padding: 20px;
+    }
+    h1.border {
+      text-align: center;
+      color: #2183B9;
+      padding: 0.5px;
+      font-family: "Nexa Bold";
+      font-size: 200%;
+    }
+    p.submit {
+      cursor: pointer;
+      background-color: rgba(0,0,0,0.1);
+      border: none;
+      height:25px;
+      width: 120px;
+    }
+    select {
+      background-color: rgba(0,0,0,0.1);
+      color: white;
+      border: solid white 1px;
+    }
+    select.box {
+      height:25px;
+      width: 250px;
+      font-size:10pt;
+      border: solid white 1px;
+    }
+    input {
+      background-color: rgba(0, 0, 0, 0.1);
+      color: white;
+      border: solid white 1px;
+    }
+    input.box {
+      height:25px;
+      font-size: 10pt;
+      width: 250px;
+      border: solid white 1px;
+    }
+    input.submit {
+      height:25px;
+      width: 120px;
+    }
+    br.para {
+      display: block;
+      margin: 1px;
+      line-height:5px;
+    }
+
+  </style>
+  <h1 class="border"> MODEL UNITED NATIONS <br> POINTS SYSTEM </h1>
+</head>
+<body ng-controller="maincontroller">
+<form ng-submit="ValidateForm(SelectedCountry,SelectSpeech,InsertedPoints)" style="color: black">
+  <!--country (bold)-->
+  <p class="text">
+    <b style="color: white">COUNTRY</b>
+    <br>
+    <select class="box" ng-model="SelectedCountry">
+      <option ng-repeat="country in countries" value="{{country.id}}">{{country.country}}</option>
+    </select>
+  </p>
+  <br class="para">
+  <!--Motion (bold)-->
+  <p class="text">
+    <b style="color: white">SPEECH TYPE</b>
+    <br>
+    <select class="box" ng-model="SelectSpeech">
+      <option></option>
+      <option value="SL">Speakers List</option>
+      <option value="ModCaucus">Moderated Caucus Topics</option>
+      <option value="POIa">Point of Information (Asked)</option>
+      <option value="POIr">Point of Information (Response)</option>
+      <option value="FPV">Foreign Policy Violation</option>
+      <option value="FE">Factual Error</option>
+      <option value="IOS">Infringement of Sovereignty</option>
+      <option value="statements">Statements</option>
+      <option value="RS">Resolution Sponsors</option>
+      <option value="Amendments">Amendments</option>
+    </select>
+  </p>
+  <br class="para">
+  <!--points-->
+  <p class="text">
+    <b style="color: white">POINTS</b>
+    <br>
+    <input ng-model="InsertedPoints" class="box" type="number" name="Points">
+  </p>
+  <!--"submit points"-->
+  <p class="submit">
+    <input class="submit" type="submit" value="SUBMIT POINTS">
+  </p>
+</form>
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+<script type="text/javascript" src="app.js">
+</script>
+</body>
+<style>
+  h2.footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    color: #2183B9;
+    text-align: center;
+    padding: 10px;
+    font-size: small;
+  }
+</style>
+<h2 class="footer">
+  MADE BY TANEISHQ MUHUNTHAN <br> HEAD OF INFORMATION TECHNOLOGY
+</h2>
+</html>
