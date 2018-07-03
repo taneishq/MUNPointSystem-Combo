@@ -3,8 +3,8 @@
 // Declare app level module which depends on views, and components
 var app = angular.module('pointsystem', []);
 app.controller('maincontroller', function($scope, $http) {
-    $scope.getcountryurl="http://localhost:5600/getcountries";
-    $scope.insertDataurl="http://localhost:5600/addPoints/";
+    $scope.getcountryurl="http://54.186.105.57:5600/getcountries";
+    $scope.insertDataurl="http://54.186.105.57:5600/addPoints/";
     $scope.countries=[];
     $scope.checkValidity=function(Points,Speech){
         var isValid = true;
